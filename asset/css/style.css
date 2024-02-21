@@ -10,12 +10,12 @@
 
 /* Navbar */
 .navbar {
-    padding: 20px;
+    padding: 40px;
     background-color: var(--sekunder1);
 }
 
 .navbar .navbar-brand {
-    padding-right: 35px;
+    padding-right: 40px;
     font-size: 20px;
     font-weight: 400;
     font-family: "inter", arial;
@@ -42,19 +42,24 @@
 }
 
 .navbar .collapse .navbar-nav {
-    padding-left: 35px;
+    padding-left: 40px;
 }
 
 .navbar .collapse .navbar-nav .nav-link {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     font-family: "inter", arial;
     color: var(--sekunder2);
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .navbar .collapse .navbar-nav .nav-link.active {
     color: var(--primary);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
+}
+
+.navbar .collapse .bi-bell-fill {
+    color: var(--primary);
+    font-size: 34px;
 }
