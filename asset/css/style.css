@@ -1,0 +1,60 @@
+:root {
+    --primary: #fff;
+    --sekunder: #FFA800;
+    --sekunder1: #000;
+    --sekunder2: #8a8a8a;
+
+}
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Navbar */
+.navbar {
+    padding: 35px;
+    background-color: var(--sekunder1);
+}
+
+.navbar .navbar-brand {
+    padding-right: 35px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "inter", arial;
+    color: var(--primary);
+}
+
+.navbar .navbar-brand span{
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "inter", arial;
+    color: var(--primary);
+}
+
+.navbar .collapse .d-flex input {
+    width: 521px;
+    height: 47px;
+    border-radius: 45px;
+    display: inline-block;
+    background-image: url("../font/search.svg");
+    background-repeat: no-repeat;
+    background-position: left 20px center;
+    background-size: 20px 20px;
+}
+
+.navbar .collapse .navbar-nav {
+    padding-left: 35px;
+}
+
+.navbar .collapse .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "inter", arial;
+    color: var(--sekunder2);
+    margin-left: 15px;
+}
+
+.navbar .collapse .navbar-nav .nav-link.active {
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+}
