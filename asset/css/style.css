@@ -1,7 +1,8 @@
 :root {
     --primary: #fff;
     --sekunder: #FFA800;
-    --sekunder1: #000;
+    --black: #000;
+    --black2: #151515;
     --sekunder2: #8a8a8a;
 
 }
@@ -11,14 +12,14 @@
 /* Navbar */
 .navbar {
     padding: 40px;
-    background-color: var(--sekunder1);
+    background-color: var(--black);
 }
 
 .navbar .navbar-brand {
     padding-right: 40px;
     font-size: 20px;
     font-weight: 400;
-    font-family: "inter", arial;
+    font-family: "inter", sans-serif;
     color: var(--primary);
 }
 
@@ -26,7 +27,7 @@
     display: block;
     font-size: 20px;
     font-weight: 700;
-    font-family: "inter", arial;
+    font-family: "inter", sans-serif;
     color: var(--primary);
 }
 
@@ -42,13 +43,13 @@
 }
 
 .navbar .collapse .navbar-nav {
-    padding-left: 40px;
+    padding: 0 60px 0 30px;
 }
 
 .navbar .collapse .navbar-nav .nav-link {
     font-size: 24px;
     font-weight: 400;
-    font-family: "inter", arial;
+    font-family: "inter", sans-serif;
     color: var(--sekunder2);
     margin-left: 20px;
 }
@@ -62,4 +63,89 @@
 .navbar .collapse .bi-bell-fill {
     color: var(--primary);
     font-size: 34px;
+}
+
+/* header */
+.header {
+    margin-top: 50px;
+}
+
+.header .carosel {
+    background-color: var(--black2);
+    border-radius: 60px;
+}
+
+.header .carosel .img {
+    background-image: url('../img/cdc559e4ac42f381096db3f06920d635.jpg');
+    opacity: 0.2;
+    width: 1318px !important;
+    height: 444px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 60px;
+}
+
+.header .carosel .row {
+    position: absolute;
+}
+
+.header .carosel .row .col-4 {
+    margin-top: 70px;
+    line-height: 116.18px;
+    padding-left: 140px;
+    font-family: "inter", sans-serif;
+    font-weight: 700;
+    font-size: 96px;
+    font-style: italic;
+    color: var(--primary);
+}
+
+.header .carosel .row .col-4 span {
+    display: block;
+    font-size: 145px;
+    color: var(--sekunder);
+}
+
+.header .carosel .row .col-4 p {
+    font-size: 16px;
+}
+
+.header .carosel .row .col-4 .s {
+font-family: 'Inter', sans-serif;
+font-size: 100px;
+font-weight: 700;
+text-align: left;
+}
+
+.header .carosel .row .col-4 .s span {
+font-family: 'Inter', sans-serif;
+font-size: 100px;
+font-weight: 300;
+text-align: left;
+color: var(--primary);
+}
+
+/* main */
+.produk {
+    margin-top: 80px;
+}
+.produk p {
+    font-family: "inter", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--black);
+}
+
+.produk .barang .card {
+    margin-top: 14px;
+    border: 0;
+}
+
+.produk .barang .card img {
+    height: 268px;
+    border-radius: 45px;
 }
