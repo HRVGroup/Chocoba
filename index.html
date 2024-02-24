@@ -10,16 +10,19 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="#">Chocoba<span>Snack</span></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+        <div class="container d-flex flex-nowrap" id="baru">
+          <a class="navbar-brand order-1" href="#" id="judul">Chocoba<span>Snack</span></a>
+          <form class="d-flex order-2" role="search">
+              <input class="me-2" type="text" aria-label="Search">
+          </form>
+          <div class="notif order-4" id="bel">
+            <a href=""><i class="bi bi-bell-fill "></i></a>
+          </div>
+          <button class="navbar-toggler order-5" id="togel" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex" role="search">
-                <input class="me-2" type="text" aria-label="Search">
-            </form>
             <ul class="navbar-nav mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Beranda</a>
@@ -31,10 +34,11 @@
                 <a class="nav-link" href="#">Histori</a>
               </li>
             </ul>
-            <a href=""><i class="bi bi-bell-fill"></i></a>
           </div>
         </div>
       </nav>
+
+      
 
       <!-- iklan -->
       <header class="header container">
@@ -46,7 +50,7 @@
               <p>Hanya pembeli pertama</p>
             </div>
 
-            <div class="col"></div>
+            <div class="col-4 hilang"></div>
 
             <div class="col-4">
               <p class="s">
@@ -62,39 +66,45 @@
       <main class="produk container">
         <p>BEST SELLER</p>
 
-        <section class="barang row">
-          <div class="col-md-4">
-            <div class="card" style="width: 100%;">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg"w class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
+        <div class="garis"></div>
 
-          <div class="col-md-4">
-            <div class="card" style="width: 100%;">
-              <img src="asset/img/cdc559e4ac42f381096db3f06920d635.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
+        <section class="barang">
+          <div class="box">
+            <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
+            <h3>CHOCOBA LUMER</h3>
+            <h5>Rp . 5.000</h5>
           </div>
-
-          <div class="col-md-4">
-            <div class="card" style="width: 100%;">
-              <img src="asset/img/90e572dd-faf1-45e6-9440-868df4d55287.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
+          <div class="box">
+            <img src="asset/img/90e572dd-faf1-45e6-9440-868df4d55287.jpg" alt="">
+            <h3>CHOCOBA LUMER</h3>
+            <h5>Rp . 5.000</h5>
           </div>
-
+          <div class="box">
+            <img src="asset/img/cdc559e4ac42f381096db3f06920d635.jpg" alt="">
+            <h3>CHOCOBA LUMER</h3>
+            <h5>Rp . 5.000</h5>
+          </div>
         </section>
 
       </main>
       
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+      const togel = document.getElementById('togel')
+      const collapse = document.getElementById('navbarSupportedContent')
+      const judul = document.getElementById('judul')
+      const bel = document.getElementById('bel')
+      const baru = document.getElementById('baru')
+
+      togel.addEventListener("click", () => {
+        collapse.classList.toggle("order-3")
+        bel.classList.toggle("order-4")
+        togel.classList.toggle("order-5")
+        judul.classList.toggle("order-1")
+        baru.classList.toggle("d-flex")
+        baru.classList.toggle("flex-nowrap")
+      });
+    </script>
   </body>
 </html>
