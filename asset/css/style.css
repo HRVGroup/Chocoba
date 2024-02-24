@@ -198,7 +198,7 @@ color: var(--primary);
 
 
 
-@media (max-width: 575.98px) {  }
+
 
 @media (max-width: 767.98px) { 
     .navbar .d-flex input {
@@ -466,5 +466,36 @@ color: var(--primary);
 
     .header .carosel .img {
         width: 100% !important;
+    }
+ }
+
+ @media (max-width: 575.98px) { 
+    .header .carosel .row .col-4 {
+        line-height: 50px !important;
+        padding-left: 40px !important;
+        font-size: 30px !important;
+        margin-left: 20px;
+    }
+    
+    .header .carosel .row .col-4 span {
+        font-size: 50px;
+    }
+    
+    .header .carosel .row .col-4 p {
+        font-size: 13.3px;
+    }
+    
+    .header .carosel .row .col-4 .s {
+        font-size: 40px !important;
+        margin-left: -40px;
+    }
+    
+    .header .carosel .row .col-4 .s span {
+        font-size: 40px !important;
+    }
+
+    .header .carosel .img {
+        width: 100% !important;
+        height: 444px;
     }
  }
