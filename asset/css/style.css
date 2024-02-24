@@ -1,13 +1,20 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 :root {
     --primary: #fff;
     --sekunder: #FFA800;
     --black: #000;
     --black2: #151515;
-    --sekunder2: #8a8a8a;
-
+    --gray: #8a8a8a;
+    --gray2: #D9D9D9;
 }
-/* font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'inter', sans-serif;
+}
 
 /* Navbar */
 .navbar {
@@ -19,7 +26,6 @@
     padding-right: 40px;
     font-size: 20px;
     font-weight: 400;
-    font-family: "inter", sans-serif;
     color: var(--primary);
 }
 
@@ -27,7 +33,6 @@
     display: block;
     font-size: 20px;
     font-weight: 700;
-    font-family: "inter", sans-serif;
     color: var(--primary);
 }
 
@@ -49,8 +54,7 @@
 .navbar .collapse .navbar-nav .nav-link {
     font-size: 24px;
     font-weight: 400;
-    font-family: "inter", sans-serif;
-    color: var(--sekunder2);
+    color: var(--gray);
     margin-left: 20px;
 }
 
@@ -94,7 +98,6 @@
     margin-top: 70px;
     line-height: 116.18px;
     padding-left: 140px;
-    font-family: "inter", sans-serif;
     font-weight: 700;
     font-size: 96px;
     font-style: italic;
@@ -112,14 +115,12 @@
 }
 
 .header .carosel .row .col-4 .s {
-font-family: 'Inter', sans-serif;
 font-size: 100px;
 font-weight: 700;
 text-align: left;
 }
 
 .header .carosel .row .col-4 .s span {
-font-family: 'Inter', sans-serif;
 font-size: 100px;
 font-weight: 300;
 text-align: left;
@@ -131,7 +132,6 @@ color: var(--primary);
     margin-top: 80px;
 }
 .produk p {
-    font-family: "inter", sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
@@ -196,9 +196,188 @@ color: var(--primary);
     padding-bottom: 25px;
 }
 
+/* login */
+.login .gambar-login {
+    background-image: url(../img/wibu1.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    height: 100vh;
+    object-fit: contain;
+}
 
+.login .gambar-login .img {
+    height: 100vh;
+    background-color: rgba(255, 168, 0, 0.4);
+}
 
+.login > p {
+    position: absolute;
+    top: 59px;
+    left: 48px;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--primary);
+}
 
+.login p span {
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.login .form-login h1 {
+    margin-top: 163px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.login .form-login p {
+    width: 400px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    margin: 0 auto;
+}
+
+.login .form-login .input {
+    margin-top: 95px;
+}
+
+.login .form-login .input > button {
+    display: block;
+    margin: 0 auto 10px;
+    width: 484px;
+    height: 68px;
+    border-radius: 55px;
+    border: none;
+    background-color: var(--sekunder);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: -0.05em;
+}
+
+.login .form-login .input .a {
+    width: 484px;
+    height: 68px;
+    border-radius: 55px;
+    border: 1px solid black;
+    background-color: var(--primary);
+    margin: auto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: -0.05em;
+}
+
+.login .form-login .input .a a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.login .form-login .input input {
+    display: block;
+    margin: 0 auto 42px;
+    width: 484px;
+    height: 68px;
+    border-radius: 55px;
+    border: none;
+    background-color: var(--gray2);
+}
+
+.login .d-flex {
+    margin-top: 25px;
+}
+
+.login .form-login .lupa a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    text-decoration: none;
+    color: var(--black);
+    margin-right: 110px;
+}
+
+.login .form-login .buat a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.05em;
+    text-align: left;
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 110px;
+}
+
+.login .gambar-regis {
+    background-image: url(../img/wibu2.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.login .gambar-regis .img {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login .form-regis {
+    margin: 149px auto;
+}
+
+.login .form-regis h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.login .form-regis p {
+    width: 453px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.login .form-regis .input {
+    margin: 109px auto;
+}
+
+.login .form-regis .input input {
+    display: block;
+    margin: 0 auto 23px;
+    width: 484px;
+    height: 68px;
+    border-radius: 55px;
+    border: none;
+    background-color: var(--gray2);
+}
+
+.login .form-regis .input button {
+    display: block;
+    margin: 0 auto;
+    width: 484px;
+    height: 68px;
+    border-radius: 55px;
+    background-color: var(--black);
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39px;
+    letter-spacing: -0.05em;
+}
 
 @media (max-width: 767.98px) { 
     .navbar .d-flex input {
@@ -291,7 +470,8 @@ color: var(--primary);
         margin-top: 80px;
     }
     .produk p {
-        font-family: "inter", sans-serif;
+
+
         font-size: 20px;
         font-weight: 700;
         line-height: 24px;

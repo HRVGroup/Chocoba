@@ -13,7 +13,7 @@
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
         <div class="container d-flex flex-nowrap" id="baru">
           <a class="navbar-brand order-1" href="#" id="judul">Chocoba<span>Snack</span></a>
-          <form class="d-flex order-2" role="search">
+          <form class="d-flex order-2" id="cari" role="search">
               <input class="me-2" type="text" aria-label="Search">
           </form>
           <div class="notif order-4" id="bel">
@@ -22,7 +22,7 @@
           <button class="navbar-toggler order-5" id="togel" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse order-3" id="navbarSupportedContent">
             <ul class="navbar-nav mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Beranda</a>
@@ -96,6 +96,7 @@
       const judul = document.getElementById('judul')
       const bel = document.getElementById('bel')
       const baru = document.getElementById('baru')
+      const cari = document.getElementById('cari')
 
       togel.addEventListener("click", () => {
         collapse.classList.toggle("order-3")
@@ -104,6 +105,7 @@
         judul.classList.toggle("order-1")
         baru.classList.toggle("d-flex")
         baru.classList.toggle("flex-nowrap")
+        cari.classList.toggle("order-2")
       });
     </script>
   </body>
