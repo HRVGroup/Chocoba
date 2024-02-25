@@ -1,3 +1,16 @@
+<?php
+session_start();
+include "conn.php";
+
+if ($_SESSION['username']) {
+  $login = 'detail/';
+} else {
+  $login = '';
+}
+
+$barang = $conn->query("SELECT * FROM barang");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,6 +22,42 @@
     <link rel="stylesheet" href="asset/css/style.css">
   </head>
   <body>
+    <?php 
+    if ($_SESSION['username'] && !$_SESSION['alert']) {
+      echo '<div class="modal fade show text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">terimakasih sudah login, sekarang pilih barang yang ingin anda beli!</h1>
+            <button type="button" class="btn-close" onclick="closeAlert()" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-warning" onclick="closeAlert()">okey</button>
+          </div>
+        </div>
+      </div>
+    </div>';
+
+    $_SESSION['alert'] = 'sudah';
+    }
+
+    if (!$_SESSION['alert'] && !$_SESSION['username']) {
+    echo '<div class="modal fade show text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Anda belum login, jika ingin membeli barang silahkan login!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-dark" onclick="closeAlert()">tidak</button>
+          <a href="login/" type="button" class="btn btn-warning">okey</a>
+        </div>
+      </div>
+    </div>
+  </div>';
+    }
+    ?>
     <!-- navbar -->
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
         <div class="container d-flex flex-nowrap" id="baru">
@@ -67,33 +116,39 @@
         <div class="garis"></div>
 
         <section class="barang">
+          <?php while($result = $barang->fetch_assoc()) { ?>
           <div class="box">
-            <a href="detail/">
+            <a href="<?= $login ?>?barang=<?= $result['id'] ?>">
               <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
+              <h3><?= $result['n_barang'] ?></h3>
+              <h5>Rp. <?= $result['h_barang'] ?></h5>
             </a>
           </div>
-          <div class="box">
-            <a href="detail/">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
-            </a>
-          </div>
-          <div class="box">
-            <a href="detail/">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
-            </a>
-          </div>
+          <?php } ?>
         </section>
 
       </main>
       
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Mendapatkan elemen yang ingin ditambahkan kelas dan gaya CSS
+    var alert = document.getElementById("exampleModal");
+      alert.style.display = "block";
+      setTimeout(function() {
+        alert.style.opacity = 1;
+        alert.classList.remove("hide");
+      }, 100);
+});
+
+// Fungsi untuk menutup alert
+function closeAlert() {
+  var alert = document.getElementById("exampleModal");
+  alert.style.opacity = 0;
+  alert.classList.add("hide");
+}
+    </script>
     <script>
       const togel = document.getElementById('togel')
       const collapse = document.getElementById('navbarSupportedContent')

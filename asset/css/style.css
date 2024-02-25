@@ -16,6 +16,17 @@
     font-family: 'inter', sans-serif;
 }
 
+#exampleModal {
+    opacity: 1; /* Opacity awal */
+    transition: opacity 0.3s, transform 0.3s !important;
+}
+
+.hide {
+    z-index: -99999;
+    opacity: 0;
+    transform: translateY(-50px); /* Menggeser ke atas */
+}
+
 /* Navbar */
 .navbar {
     padding: 40px;
@@ -153,7 +164,7 @@ color: var(--primary);
 }
 
 .barang::-webkit-scrollbar {
-    height: 4px;
+    height: 8px;
     border-radius: 10px;
     background: transparent;
 }
@@ -514,6 +525,11 @@ color: var(--primary);
     margin: 50px 0 0 250px;
 }
 
+.histori .box .banyak form input::-webkit-inner-spin-button, 
+.histori .box .banyak form input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
 .histori .box .banyak form input {
     width: 194px;
     height: 51px;
@@ -544,7 +560,7 @@ color: var(--primary);
     margin-top: 31px;
 }
 
-.detail .col h1 {
+.detail .col-lg-5 h1 {
     margin-top: 31px;
     font-size: 64px;
     font-weight: 400;
@@ -553,7 +569,7 @@ color: var(--primary);
     text-align: left;
 }
 
-.detail .col h1 span {
+.detail .col-lg-5 h1 span {
     font-size: 64px;
     font-weight: 600;
     line-height: 77px;
@@ -561,7 +577,7 @@ color: var(--primary);
     text-align: left;
 }
 
-.detail .col h3 {
+.detail .col-lg-5 h3 {
     font-size: 40px;
     font-weight: 400;
     line-height: 48px;
@@ -569,7 +585,7 @@ color: var(--primary);
     text-align: left;
 }
 
-.detail .col p {
+.detail .col-lg-5 p {
     font-size: 20px;
     font-weight: 400;
     line-height: 24px;
@@ -577,7 +593,7 @@ color: var(--primary);
     text-align: left;
 }
 
-.detail .row .col img {
+.detail .row .g {
     width: 700px;
     height: 740px;
     border-radius: 45px;
@@ -607,22 +623,37 @@ color: var(--primary);
     font-weight: 400;
 }
 
-.detail .row .col form #kurang{
-    margin-left: 180px;
+.detail .row .col-lg-5 form input::-webkit-inner-spin-button, 
+.detail .row .col-lg-5 form input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }
 
-.detail .row .col form input {
+
+.detail .row .col-lg-5 form #kurang {
+    background-color: transparent;
+    border: 0;
+    margin-left: 180px;
+    margin-right: 0px;
+    padding: 0;
+}
+
+.detail .row .col-lg-5 form #tambah {
+    background-color: transparent;
+    border: 0;
+}
+
+.detail .row .col-lg-5 form input {
     width: 94px;
     height: 46px;
     border-radius: 45px;
     text-align: center;
 }
 
-.detail .row .col form .tombol {
+.detail .row .col-lg-5 form .tmbl {
     margin-top: 60px;
 }
 
-.detail .row .col form .tombol button[type="submit"] {
+.detail .row .col-lg-5 form .tmbl button[type="submit"] {
     width: 270px;
     height: 65px;
     border-radius: 45px;
@@ -635,7 +666,7 @@ color: var(--primary);
     border: 0;
 }
 
-.detail .row .col form .tombol button[type="button"] {
+.detail .row .col-lg-5 form .tmbl button[type="button"] {
     width: 270px;
     height: 65px;
     border-radius: 45px;
@@ -650,12 +681,12 @@ color: var(--primary);
     border: 0;
 }
 
-.detail .row .col form button a {
+.detail .row .col-lg-5 form button a {
     color: inherit;
     text-decoration: none;
 }
 
-.detail .row .col form .b {
+.detail .row .col-lg-5 form .b {
     width: 396px;
     height: 62px;
     border-radius: 55px;
@@ -675,7 +706,7 @@ color: var(--primary);
     margin-left: 50px;
 }
 
-.detail .row .col .h1 {
+.detail .row .col-lg-5 .h1 {
     font-size: 64px;
     font-weight: 600;
     line-height: 77px;
@@ -685,7 +716,7 @@ color: var(--primary);
     margin-left: 50px;
 }
 
-.detail .row .col form p {
+.detail .row .col-lg-5 form p {
     font-size: 24px;
     font-weight: 500;
     line-height: 29px;
@@ -694,7 +725,7 @@ color: var(--primary);
     margin-left: 50px;
 }
 
-.detail .row .col form .number {
+.detail .row .col-lg-5 form .number {
     width: 396px;
     height: 62px;
     border-radius: 55px;
@@ -709,11 +740,11 @@ color: var(--primary);
     margin-left: 50px;
 }
 
-.detail .row .col form .number span {
+.detail .row .col-lg-5 form .number span {
     margin-left: 210px;
 }
 
-.detail .row .col form textarea {
+.detail .row .col-lg-5 form textarea {
     width: 396px;
     height: 103px;
     border-radius: 15px;
@@ -721,13 +752,14 @@ color: var(--primary);
     margin-left: 50px;
 }
 
-.detail .row .col form .tombol {
+.detail .row .col-lg-5 form .tombol {
     width: 534px;
     height: 65px;
     border-radius: 45px;
     font-size: 24px;
     font-weight: 600;
     line-height: 29px;
+    margin-top: 40px;
     letter-spacing: 0em;
     background-color: var(--black);
     border: 1px solid black;
@@ -745,6 +777,169 @@ color: var(--primary);
 
     .header .carosel .row .col-4 {
         margin-right: 40px;
+    }
+
+    .histori .box .banyak form {
+        width: 100%;
+        margin: 50px 0 0 0px !important;
+    }
+
+    .histori .box .pembeli h1 {
+        width: 100px;
+        margin-top: 40px;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .histori h1 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 48px;
+        letter-spacing: 0em;
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+    
+    .histori .box {
+        width: 100%;
+        height: 264px;
+        border: 1px solid black;
+        border-radius: 60px;
+    }
+    
+    .histori .box img {
+        width: 244px;
+        height: 186px;
+        border-radius: 50px;
+        margin: 30px 30px 0 30px;
+    }
+    
+    .histori .box .pembeli h1 {
+        width: 100px;
+        margin-top: 40px;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    
+    .histori .box .pembeli h1 span {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 25px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    
+    .histori .box .pembeli p {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0px;
+    }
+    
+    .histori .box .status p {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 40px 0 0 200px;
+    }
+    
+    .histori .box .pembeli p span {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    
+    .histori .box .status .a {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0 0 0 200px;
+    }
+    
+    .histori .box .status h1 {
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 58px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 30px 0 0 230px;
+    }
+    
+    .histori a {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-decoration: none;
+        color: var(--black);
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+    
+    .histori .box .pembeli h3 {
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 10px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    
+    .histori .box .pembeli h6 {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    
+    .histori .box .banyak form {
+        width: 100%;
+        margin-right: auto;
+    }
+    
+    .histori .box .banyak form input::-webkit-inner-spin-button, 
+    .histori .box .banyak form input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    .histori .box .banyak form input {
+        width: 30px;
+        height: 51px;
+        border-radius: 15px;
+        text-align: center;
+    }
+    
+    #tambah {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 0em;
+    }
+    
+    #kurang {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 0em;
+        margin-right: 10px;
+        color: gray;
     }
  }
 
@@ -786,6 +981,142 @@ color: var(--primary);
     
     .navbar .notif .bi-bell-fill {
         font-size: 34px;
+    }
+
+    /* detail */
+    .detail a div {
+        font-size: 40px;
+        color: var(--black);
+        padding-top: 20px;
+    }
+
+    .detail .row {
+        margin-top: 0px;
+    }
+
+    .detail .col-lg-5 h1 {
+        margin-top: 0 !important;
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    .detail .col-lg-5 h1 span {
+        margin-top: 0 !important;
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    .detail .col-lg-5 h3 {
+        font-size: 30px;
+        margin: -10px 0 0px 0;
+    }
+
+    .detail .col-lg-5 p {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    .detail .row .g {
+        width: 100% !important;
+        height: 420px !important;
+        border-radius: 45px;
+        margin-top: 31px;
+    }
+
+    .detail .product-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .detail .star-rating {
+        display: flex;
+        align-items: center;
+        color: #ffc107;
+    }
+    
+    .detail .star-rating i {
+        font-size: 20px;
+        margin-right: 4px;
+    }
+    
+    .detail .rating-text {
+        margin-left: 8px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .detail .row .col-lg-5 form input::-webkit-inner-spin-button, 
+    .detail .row .col-lg-5 form input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+
+    .detail .row .col-lg-5 form #kurang {
+        background-color: transparent;
+        border: 0;
+        margin-left: 50px;
+        margin-right: 4px;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .detail .row .col-lg-5 form #tambah {
+        background-color: transparent;
+        border: 0;
+        margin-left: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .detail .row .col-lg-5 form input {
+        width: 48px;
+        height: 23px;
+        border-radius: 45px;
+        text-align: center;
+    }
+
+    .detail .row .col-lg-5 form .tmbl {
+        margin-top: 60px;
+    }
+
+    .detail .row .col-lg-5 form .tmbl button[type="submit"] {
+        width: 270px;
+        height: 65px;
+        border-radius: 45px;
+        background-color: var(--black);
+        color: var(--primary);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        border: 0;
+    }
+
+    .detail .row .col-lg-5 form .tmbl button[type="button"] {
+        width: 270px;
+        height: 65px;
+        border-radius: 45px;
+        animation-timing-function: ease-out;
+        animation-duration: 300ms;
+        background-color: var(--sekunder);
+        color: var(--primary);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        border: 0;
+    }
+
+    .detail .row .col-lg-5 form button a {
+        color: inherit;
+        text-decoration: none;
     }
 
     /* iklan */
@@ -941,6 +1272,140 @@ color: var(--primary);
     .navbar {
         padding: 40px;
     }
+
+    /* detail */
+    .detail a div {
+        font-size: 40px;
+        color: var(--black);
+        margin-top: 0px;
+    }
+
+    .detail .row {
+        margin-top: 0px;
+    }
+
+    .detail .col-lg-5 h1 {
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    .detail .col-lg-5 h1 span {
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    .detail .col-lg-5 h3 {
+        font-size: 30px;
+        margin: -10px 0 0px 0;
+    }
+
+    .detail .col-lg-5 p {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    .detail .row .g {
+        width: 500px;
+        height: 560px;
+        border-radius: 45px;
+        margin-top: 31px;
+    }
+
+    .detail .product-rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .detail .star-rating {
+        display: flex;
+        align-items: center;
+        color: #ffc107;
+    }
+    
+    .detail .star-rating i {
+        font-size: 20px;
+        margin-right: 4px;
+    }
+    
+    .detail .rating-text {
+        margin-left: 8px;
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .detail .row .col-lg-5 form input::-webkit-inner-spin-button, 
+    .detail .row .col-lg-5 form input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+
+    .detail .row .col-lg-5 form #kurang {
+        background-color: transparent;
+        border: 0;
+        margin-left: 50px;
+        margin-right: 4px;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .detail .row .col-lg-5 form #tambah {
+        background-color: transparent;
+        border: 0;
+        margin-left: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+
+    .detail .row .col-lg-5 form input {
+        width: 48px;
+        height: 23px;
+        border-radius: 45px;
+        text-align: center;
+    }
+
+    .detail .row .col-lg-5 form .tmbl {
+        margin-top: 60px;
+    }
+
+    .detail .row .col-lg-5 form .tmbl button[type="submit"] {
+        width: 270px;
+        height: 65px;
+        border-radius: 45px;
+        background-color: var(--black);
+        color: var(--primary);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        border: 0;
+    }
+
+    .detail .row .col-lg-5 form .tmbl button[type="button"] {
+        width: 270px;
+        height: 65px;
+        border-radius: 45px;
+        animation-timing-function: ease-out;
+        animation-duration: 300ms;
+        background-color: var(--sekunder);
+        color: var(--primary);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        letter-spacing: 0em;
+        border: 0;
+    }
+
+    .detail .row .col-lg-5 form button a {
+        color: inherit;
+        text-decoration: none;
+    }
     
     .navbar .navbar-brand {
         padding-right: 30px;
@@ -962,6 +1427,153 @@ color: var(--primary);
     .navbar .collapse .navbar-nav {
         padding: 0 60px 0 30px;
     }
+    /* histori dan keranjang */
+.histori h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: 0em;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+.histori .box {
+    width: 100%;
+    height: 264px;
+    border: 1px solid black;
+    border-radius: 60px;
+}
+
+.histori .box img {
+    width: 244px;
+    height: 186px;
+    border-radius: 50px;
+    margin: 30px 30px 0 30px;
+}
+
+.histori .box .pembeli h1 {
+    width: 100px;
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.histori .box .pembeli h1 span {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.histori .box .pembeli p {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0px;
+}
+
+.histori .box .status p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 40px 0 0 200px;
+}
+
+.histori .box .pembeli p span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.histori .box .status .a {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0 0 0 200px;
+}
+
+.histori .box .status h1 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 58px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 30px 0 0 230px;
+}
+
+.histori a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.histori .box .pembeli h3 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.histori .box .pembeli h6 {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.histori .box .banyak form {
+    width: 100%;
+    margin: 50px 0 0 150px;
+}
+
+.histori .box .banyak form input::-webkit-inner-spin-button, 
+.histori .box .banyak form input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.histori .box .banyak form input {
+    width: 90px;
+    height: 51px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#tambah {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+}
+
+#kurang {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    margin-right: 10px;
+    color: gray;
+}
     
     .navbar .collapse .navbar-nav .nav-link {
         font-size: 24px;
@@ -1002,6 +1614,91 @@ color: var(--primary);
     .header .carosel .img {
         width: 100% !important;
     }
+
+    .detail .row .col-lg-5 form button a {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    .detail .row .col-lg-5 form .b {
+        width: 100% !important;
+        height: 62px;
+        border-radius: 55px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-left: 20px;
+        background-image: url(../font/caret-down-fill.svg);
+        background-size: 20px;
+        background-repeat: no-repeat;
+        appearance: none;
+        background-position: right 20px center;
+        border: 1px solid black;
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+    
+    .detail .row .col-lg-5 .h1 {
+        font-size: 32px !important;
+        font-weight: 600;
+        line-height: 77px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 30px;
+        margin-left: 0px;
+    }
+    
+    .detail .row .col-lg-5 form p {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-left: 50px;
+    }
+    
+    .detail .row .col-lg-5 form .number {
+        width: 396px;
+        height: 62px;
+        border-radius: 55px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 62px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-left: 20px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+    
+    .detail .row .col-lg-5 form .number span {
+        margin-left: 210px;
+    }
+    
+    .detail .row .col-lg-5 form textarea {
+        width: 100%;
+        height: 103px;
+        border-radius: 15px;
+        border: 1px solid black;
+        margin-left: 50px;
+    }
+    
+    .detail .row .col-lg-5 form .tombol {
+        width: 534px;
+        height: 65px;
+        border-radius: 45px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 29px;
+        margin-top: 40px;
+        letter-spacing: 0em;
+        background-color: var(--black);
+        border: 1px solid black;
+        color: var(--primary);
+    }
  }
 
  @media (max-width: 575.98px) { 
@@ -1032,5 +1729,13 @@ color: var(--primary);
     .header .carosel .img {
         width: 100% !important;
         height: 444px;
+    }
+
+    .detail .row .g {
+        width: 90% !important;
+        height: 420px !important;
+        border-radius: 45px;
+        margin-top: 31px;
+        margin-left: 5%;
     }
  }

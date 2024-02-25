@@ -1,3 +1,18 @@
+<?php
+  session_start();
+  include '../conn.php';
+
+  $id = $_GET['barang'];
+  $barang = $conn->query("SELECT * FROM barang WHERE id = $id");
+  $hasil = $barang->fetch_assoc();
+
+  $number = number_format($hasil['h_barang'], 0, ',', '.');
+
+  $use = $_SESSION['username'];
+  $user = $conn->query("SELECT * FROM user WHERE email = '$use'");
+  $result = $user->fetch_assoc();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,16 +26,14 @@
   <body>
     
     <div class="container overflow-hidden detail">
-      <a href=""><div class="bi bi-arrow-left"></div></a>
+      <a href="../home.php"><div class="bi bi-arrow-left"></div></a>
 
-        <div class="row gx-4 gap-3">
-          <div class="col">
-           <img src="../asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-          </div>
-          <div class="col">
+        <div class="row gx-4 gap-5">
+          <div class="col-lg-6 g" style="background-image: url(../asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg);"></div>
+          <div class="col-lg-5">
               <h1><span>KRIPIK PISANG</span>
-                COKLAT LUMER</h1>
-              <h3>8.000</h3>
+                <?= strtoupper($hasil['n_barang']) ?></h1>
+              <h3><?= $number ?></h3>
               <div class="product-rating">
                 <span class="star-rating">
                   <i></i>
@@ -29,16 +42,18 @@
                   <i></i>
                   <i></i>
                 </span>
-                <span class="rating-text">4.3</span>
+                <span class="rating-text"><?= $hasil['bintang'] ?></span>
               </div>
-              <p>Pisang coklat lumer adalah camilan yang lezat dan mudah dibuat. Perpaduan rasa manis, tekstur lembut, dan aroma yang menggoda menjadikannya pilihan yang tepat untuk dinikmati sendiri maupun bersama keluarga. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et nunc a arcu consectetur malesuada. Fusce tristique lobortis mi at vulputate. Maecenas quis volutpat neque. Praesent elementum in libero ac malesuada. Etiam et dolor at augue aliquet venenatis et et diam.</p>
+              <p><?= $hasil['desk_barang'] ?></p>
               <div class="jumlah">
-                <form action="" method="post">
+                <form action="bayar.php" method="get">
+                <input type="hidden" name="beli" value="<?= $id ?>">
+
                   JUMLAH PESANAN
-                  <a id="kurang" onclick="decrement()"><i class="bi bi-dash"></i></a>
-                  <input type="number" name="banyak" id="quantity">
-                  <a id="tambah" onclick="increment()"><i class="bi bi-plus"></i></a>
-                  <div class="tombol d-flex gap-3">
+                  <button type="button" id="kurang" onclick="decrement()"><i class="bi bi-dash"></i></button>
+                  <input type="number" name="banyak" id="quantity" value="1">
+                  <button type="button" id="tambah" onclick="increment()"><i class="bi bi-plus"></i></button>
+                  <div class="tmbl d-flex justify-content-center gap-3">
                     <button type="submit">Beli</button>
                     <button type="button"><a href="">Keranjang</a></button>
                   </div>
@@ -50,7 +65,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
-              var disable = document.getElementById("tambah");
+        var disable = document.getElementById("tambah");
         var disable2 = document.getElementById("kurang");
         var quantity = document.getElementById("quantity");
 
@@ -75,8 +90,8 @@
             disable.style.color = "black";
           }
 
-          if (quantity.value < 1) {
-            quantity.value = "";
+          if (quantity.value <= 1) {
+            quantity.value = "1";
             disable2.style.color = "gray";
           }
         }
@@ -106,7 +121,6 @@ for (const rating of productRating) {
   }
 
   // Mengatur bintang setengah
-  console.log(ratingValue % 1)
   if (ratingValue % 1 !== 0) {
     const a = Math.floor(ratingValue);
     starRating.children[a].classList.add("bi", "bi-star-half");
