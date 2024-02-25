@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../asset/css/style.css">
+  </head>
+  <body>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="container d-flex flex-nowrap" id="baru">
+              <a class="navbar-brand order-1" href="#" id="judul">Chocoba<span>Snack</span></a>
+              <form class="d-flex order-2" id="cari" role="search">
+                  <input class="me-2" type="text" aria-label="Search">
+              </form>
+              <div class="notif order-4" id="bel">
+                <a href=""><i class="bi bi-bell-fill "></i></a>
+              </div>
+              <button class="navbar-toggler order-5" id="togel" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse order-3" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../">Beranda</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">Keranjang</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../histori">Histori</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- histori -->
+          <main class="histori container">
+            <h1>KERANJANG PEMBELIAN</h1>
+
+            <div class="box d-flex d-flex justify-content-start">
+                <img src="../asset/img/693a50cbe461d4f9d64bb0265ed81f27.jpg" alt="">
+                <div class="pembeli">
+                  <h1><span>KRIPIK PISANG</span> 
+                    COKLAT</h1>
+                  <h3>8.000</h3>
+                  <h6>STOK: 4</h6>
+                </div>
+                <div class="banyak">
+                  <form action="" method="post">
+                      <a id="kurang" onclick="decrement()"><i class="bi bi-dash"></i></a>
+                      <input type="number" name="banyak" id="quantity">
+                      <a id="tambah" onclick="increment()"><i class="bi bi-plus"></i></a>
+                  </form>
+                </div>
+            </div>
+            <br>
+            <a href="">HAPUS DARI KERANJANG</a>
+          </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+        var disable = document.getElementById("tambah");
+        var disable2 = document.getElementById("kurang");
+        var quantity = document.getElementById("quantity");
+
+        function increment() {
+          quantity.value++;
+
+          if (quantity.value >= 10) {
+            disable.removeAttribute("onclick")
+            disable.style.color = "gray";
+          }
+
+          if (quantity.value >= 1) {
+            disable2.style.color = "black";
+          }
+        }
+        
+        function decrement() {
+          quantity.value--;
+
+          if (quantity.value < 10) {
+            disable.setAttribute("onclick", "increment()")
+            disable.style.color = "black";
+          }
+
+          if (quantity.value < 1) {
+            quantity.value = "";
+            disable2.style.color = "gray";
+          }
+        }
+
+        quantity.addEventListener("input", Quantity);
+
+        function validateQuantity(event) {
+        if (event.key === "-") {
+            event.preventDefault();
+        }
+        }
+
+        quantity.addEventListener("keydown", validateQuantity);
+
+
+        
+        
+
+        </script>
+  </body>
+</html>
