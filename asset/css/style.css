@@ -43,6 +43,7 @@
     display: inline-block;
     background-image: url("../font/search.svg");
     background-repeat: no-repeat;
+    padding-left: 45px;
     background-position: left 20px center;
     background-size: 20px 20px;
 }
@@ -56,6 +57,10 @@
     font-weight: 400;
     color: var(--gray);
     margin-left: 20px;
+}
+
+.navbar .collapse .navbar-nav .nav-link:hover {
+    color: var(--primary);
 }
 
 .navbar .collapse .navbar-nav .nav-link.active {
@@ -172,6 +177,15 @@ color: var(--primary);
     margin-right: 20px;
     margin-top: 30px;
     margin-bottom: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.barang .box:hover {
+    transform: translateY(-10px);
+}
+
+.barang .box a {
+    text-decoration: none;
 }
 
 .barang .box img {
@@ -380,7 +394,7 @@ color: var(--primary);
     letter-spacing: -0.05em;
 }
 
-/* histori */
+/* histori dan keranjang */
 .histori h1 {
     font-size: 40px;
     font-weight: 600;
@@ -521,6 +535,203 @@ color: var(--primary);
     letter-spacing: 0em;
     margin-right: 20px;
     color: gray;
+}
+
+/* detail */
+.detail a div {
+    font-size: 60px;
+    color: var(--black);
+    margin-top: 31px;
+}
+
+.detail .col h1 {
+    margin-top: 31px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.detail .col h1 span {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.detail .col h3 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.detail .col p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.detail .row .col img {
+    width: 700px;
+    height: 740px;
+    border-radius: 45px;
+    margin-top: 31px;
+}
+
+.detail .product-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.detail .star-rating {
+    display: flex;
+    align-items: center;
+    color: #ffc107;
+}
+  
+.detail .star-rating i {
+    font-size: 35px;
+    margin-right: 4px;
+}
+  
+.detail .rating-text {
+    margin-left: 8px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.detail .row .col form #kurang{
+    margin-left: 180px;
+}
+
+.detail .row .col form input {
+    width: 94px;
+    height: 46px;
+    border-radius: 45px;
+    text-align: center;
+}
+
+.detail .row .col form .tombol {
+    margin-top: 60px;
+}
+
+.detail .row .col form .tombol button[type="submit"] {
+    width: 270px;
+    height: 65px;
+    border-radius: 45px;
+    background-color: var(--black);
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    border: 0;
+}
+
+.detail .row .col form .tombol button[type="button"] {
+    width: 270px;
+    height: 65px;
+    border-radius: 45px;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
+    background-color: var(--sekunder);
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    border: 0;
+}
+
+.detail .row .col form button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.detail .row .col form .b {
+    width: 396px;
+    height: 62px;
+    border-radius: 55px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 20px;
+    background-image: url(../font/caret-down-fill.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    appearance: none;
+    background-position: right 20px center;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.detail .row .col .h1 {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 77px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.detail .row .col form p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 50px;
+}
+
+.detail .row .col form .number {
+    width: 396px;
+    height: 62px;
+    border-radius: 55px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 62px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 20px;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+.detail .row .col form .number span {
+    margin-left: 210px;
+}
+
+.detail .row .col form textarea {
+    width: 396px;
+    height: 103px;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-left: 50px;
+}
+
+.detail .row .col form .tombol {
+    width: 534px;
+    height: 65px;
+    border-radius: 45px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+    background-color: var(--black);
+    border: 1px solid black;
+    color: var(--primary);
 }
 
 @media (max-width: 767.98px) { 
