@@ -1,116 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="asset/css/style.css">
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-        <div class="container d-flex flex-nowrap" id="baru">
-          <a class="navbar-brand order-1" href="#" id="judul">Chocoba<span>Snack</span></a>
-          <form class="d-flex order-2" id="cari" role="search">
-              <input class="me-2" type="text" aria-label="Search">
-          </form>
-          <div class="notif order-4" id="bel">
-            <a href=""><i class="bi bi-bell-fill "></i></a>
-          </div>
-          <button class="navbar-toggler order-5" id="togel" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse order-3" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page">Beranda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Keranjang/">Keranjang</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="histori/">Histori</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-      <!-- iklan -->
-      <header class="header container">
-        <div class="carosel">
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #FFA800;
+        }
 
-          <div class="row">
-            <div class="col-4">
-              PROMO<span>45%</span>
-              <p>Hanya pembeli pertama</p>
-            </div>
+        .loader {
+            font-family: "inter";
+            font-size: 8rem;
+            font-variant: small-caps;
+            background: conic-gradient(
+                #fdfff7 0 25%,
+                #121212 25% 50%,
+                #fdfff7 50% 75%,
+                #000 75%
+            );
+            background-size: 200% 200%;
+            animation: animate 4.3s ease-in-out infinite;
+            color: transparent;
+            background-clip: text;
+                -webkit-background-clip: text;
+        }
 
-            <div class="col-4 hilang"></div>
+        .loader::after {
+            content: "";
+            display: block;
+            padding: 3px;
+            background: linear-gradient(
+                to right,
+                #f5f5f5 33%,
+                #8a8a8a 66%,
+                #151515 100%
+            ) no-repeat;
+            color: transparent;
+            animation: load 3s linear infinite;
+        }
 
-            <div class="col-4">
-              <p class="s">
-                BEST<span>SNACK</span>
-              </p>
-            </div>
-          </div>
+        @keyframes animate {
+            25% {
+                background-position: 0 100%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            75% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
 
-          <div class="img"></div>
-        </div>
-      </header>
+        @keyframes load {
+            0% {
+                background-size: 0% 15px;
+            }
+            25% {
+                background-size: 25% 15px;
+            }
+            50% {
+                background-size: 50% 15px;
+            }
+            75% {
+                background-size: 75% 15px;
+            }
+            100% {
+                background-size: 100% 15px;
+            }
+        }
 
-      <main class="produk container">
-        <p>BEST SELLER</p>
+        @media (max-width: 1920px) { 
+            .loader {
+                font-size: 6rem;
+            }
 
-        <div class="garis"></div>
+            @keyframes load {
+            0% {
+                background-size: 0% 6px;
+            }
+            25% {
+                background-size: 25% 6px;
+            }
+            50% {
+                background-size: 50% 6px;
+            }
+            75% {
+                background-size: 75% 6px;
+            }
+            100% {
+                background-size: 100% 6px;
+            }
+        }
+    }
 
-        <section class="barang">
-          <div class="box">
-            <a href="detail/">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
-            </a>
-          </div>
-          <div class="box">
-            <a href="detail/">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
-            </a>
-          </div>
-          <div class="box">
-            <a href="detail/">
-              <img src="asset/img/1c63eddf-6304-4e65-b84f-941ae4c1c3e7.jpg" alt="">
-              <h3>CHOCOBA LUMER</h3>
-              <h5>Rp . 5.000</h5>
-            </a>
-          </div>
-        </section>
+    @media (max-width: 1200px) { 
+        .loader {
+                font-size: 5rem;
+            }
 
-      </main>
+            @keyframes load {
+            0% {
+                background-size: 0% 5px;
+            }
+            25% {
+                background-size: 25% 5px;
+            }
+            50% {
+                background-size: 50% 5px;
+            }
+            75% {
+                background-size: 75% 5px;
+            }
+            100% {
+                background-size: 100% 5px;
+            }
+        }
+     }
+
+     @media (max-width: 992px) { 
+        .loader {
+                font-size: 4rem;
+            }
+
+            @keyframes load {
+            0% {
+                background-size: 0% 4px;
+            }
+            25% {
+                background-size: 25% 4px;
+            }
+            50% {
+                background-size: 50% 4px;
+            }
+            75% {
+                background-size: 75% 4px;
+            }
+            100% {
+                background-size: 100% 4px;
+            }
+        }
+     }
+
+     @media (max-width: 767.98px) { 
+        .loader {
+                font-size: 3rem;
+            }
+
+            @keyframes load {
+            0% {
+                background-size: 0% 4px;
+            }
+            25% {
+                background-size: 25% 4px;
+            }
+            50% {
+                background-size: 50% 4px;
+            }
+            75% {
+                background-size: 75% 4px;
+            }
+            100% {
+                background-size: 100% 4px;
+            }
+        }
+      }
+
+      @media (max-width: 575.98px) { 
+        .loader {
+                font-size: 2rem;
+            }
+
+            @keyframes load {
+            0% {
+                background-size: 0% 2px;
+            }
+            25% {
+                background-size: 25% 2px;
+            }
+            50% {
+                background-size: 50% 2px;
+            }
+            75% {
+                background-size: 75% 2px;
+            }
+            100% {
+                background-size: 100% 2px;
+            }
+        }
+       }
+    </style>
+</head>
+<body>
+
+    <div class="loader">
+        Chocoba
+    </div>
+
+    <audio autoplay>
+        <source src="asset/img/246940-b59fc76a-4052-4387-a6a7-8cc68c73c760.mp3" type="audio/mpeg">
+    </audio>
       
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
-      const togel = document.getElementById('togel')
-      const collapse = document.getElementById('navbarSupportedContent')
-      const judul = document.getElementById('judul')
-      const bel = document.getElementById('bel')
-      const baru = document.getElementById('baru')
-      const cari = document.getElementById('cari')
-
-      togel.addEventListener("click", () => {
-        collapse.classList.toggle("order-3")
-        bel.classList.toggle("order-4")
-        togel.classList.toggle("order-5")
-        judul.classList.toggle("order-1")
-        baru.classList.toggle("d-flex")
-        baru.classList.toggle("flex-nowrap")
-        cari.classList.toggle("order-2")
-      });
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 3040);
     </script>
-  </body>
+</body>
 </html>
